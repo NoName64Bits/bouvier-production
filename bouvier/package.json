@@ -1,0 +1,17 @@
+{
+  "name": "bouvier",
+  "version": "1.0.0",
+  "description": "Bouvier Main Module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ciobanu Laurentiu",
+  "license": "ISC",
+  "dependencies": {
+    "color": "^1.0.3",
+    "colors": "^1.1.2",
+    "express": "^4.14.1",
+    "fs": "0.0.1-security"
+  }
+}

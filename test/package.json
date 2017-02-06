@@ -1,0 +1,14 @@
+{
+  "name": "bouvier-test",
+  "version": "1.0.0",
+  "description": "This is just a plain test for Bouvier Modules",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Ciobanu Laurentiu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.1"
+  }
+}
