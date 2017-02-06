@@ -1,3 +1,7 @@
-texttt
-<bov content.shit2 />
-<bov helpers.help("pk") />
+<br>
+My cats: <br>
+<ul>
+  <bov for(var i = 0; i < content.cats.length; i++) {/>
+    <li><bov content.cats[i].name + " - " + content.cats[i].age /></li>
+  <bov } />
+</ul>

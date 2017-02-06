@@ -3,8 +3,9 @@ var app = express();
 
 var bouvierOptions = {
   modules: [
+    ['log', require('bouvier-log'), {}],
     ['render', require('bouvier-engine'), {mainLayout: 'main'}],
-//    ['database-controller', require('bouvier-engine'), {}]
+    ['db', require('bouvier-db'), {db: "mongodb://127.0.0.1:27017/bouvier"}]
 //    ['local-login', require('bouvier-login-local'), {}]
   ]
 };
@@ -15,10 +16,17 @@ bouvier.module('render').helper('help', (text) => {
   return "this is the text: " + text;
 });
 
-//bouvier.module('render').test('main', 'home');
+var Cat = bouvier.module('db').registerModel('Cat', {name: String, age: Number});
+
 
 app.get('/', (req, res) => {
-  res.render('home', {shit: "shittttt", shit2: "shit2"});
+  Cat.find({}, ['name', 'age'], {sort: {name: 1}}, (err, cats) => {
+    res.render('home', {cats: cats});
+  });
+});
+
+app.get('/hel', (req, res) => {
+  res.json({api: "apii"});
 });
 
 app.listen(3000);
